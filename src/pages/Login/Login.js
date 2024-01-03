@@ -50,67 +50,68 @@ const Login = () => {
     console.log("loadinggg");
   }
 
-
-
-return (
-    <>
+  return (
+    
+    <div>
       <div className="login-container">
         <div className="image-container">
-          <img className=" image" src={twitterImage} alt="twitterImage" />
+        <img className="image" src={twitterImage} alt="twitterImage" />
+      </div>
+
+      <div className="form-container">
+        <div className="form-box">
+          <TwitterIcon style={{ color: "skyblue" }} />
+          <h2 className="heading">Hapenning now</h2>
+          
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              className="email"
+              placeholder="Email address"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              className="password"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <div className="btn-login">
+              <button type="submit" className="btn">
+                Login
+              </button>
+            </div>
+          </form>
+
+          <hr />
+          <div>
+            <GoogleButton
+              className="g-btn"
+              type="light"
+              onClick={handleGoogleSignIn}
+            />
+          </div>
         </div>
 
-        <div className="form-container">
-          <div className="form-box">
-            <TwitterIcon style={{ color: "skyblue" }} />
-            <h2 className="heading">Happening now</h2>
-
-            <form onSubmit={handleSubmit}>
-              <input
-                type="email"
-                className="email"
-                placeholder="Email address"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-
-              <input
-                className="password"
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-
-              <div className="btn-login">
-                <button type="submit" className="btn">
-                  Log In
-                </button>
-              </div>
-            </form>
-            <hr />
-            <div>
-              <GoogleButton
-                className="g-btn"
-                type="light"
-                onClick={handleGoogleSignIn}
-              />
-            </div>
-          </div>
-          <div>
-            Don't have an account?
-            <Link
-              to="/signup"
-              style={{
-                textDecoration: "none",
-                color: "var(--twitter-color)",
-                fontWeight: "600",
-                marginLeft: "5px",
-              }}
-            >
-              Sign up
-            </Link>
-          </div>
+        <div>
+          Don't have an account?
+          <Link
+            to="/signup"
+            style={{
+              textDecoration: "none",
+              color: "skyblue",
+              fontWeight: "600",
+              marginLeft: "5px",
+            }}
+          >
+            Sign up
+          </Link>
         </div>
       </div>
-    </>
+    </div>
+    </div>
+   
   );
 };
 
